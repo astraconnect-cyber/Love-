@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Well Soon, My Angel 🩹✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #fff5f5 0%, #ffe3e8 40%, #f0f4ff 100%);
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --card-border: rgba(255, 182, 193, 0.4);
+      --primary: #ff5a79;
+      --primary-hover: #ff3358;
+      --accent: #d90429;
+      --text-main: #3d262a;
+      --text-muted: #735359;
+      --badge-bg: #ffe0e6;
+      --shadow: 0 10px 30px rgba(255, 90, 121, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.6;
+      padding-bottom: 60px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Floating Care Particles */
+    .bg-particle {
+      position: fixed;
+      font-size: 1.4rem;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatUp linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.8) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.7; }
+      100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header / Hero */
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+      padding: 25px 20px;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+
+    .header-badge {
+      display: inline-block;
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      color: var(--accent);
+      background: var(--badge-bg);
+      padding: 4px 18px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Section Styling */
+    .section-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Doctor's Orders */
+    .orders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .order-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 18px;
+      border-left: 4px solid var(--primary);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      transition: transform 0.2s ease;
+    }
+
+    .order-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .order-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .order-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Open When Buttons Grid */
+    .letters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .letter-btn {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(255, 90, 121, 0.08);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+
+    .letter-btn:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary);
+      box-shadow: 0 12px 30px rgba(255, 90, 121, 0.2);
+    }
+
+    .letter-icon {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .letter-title {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.05rem;
+      margin-bottom: 5px;
+    }
+
+    .letter-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Countdown & Recovery Meter */
+    .recovery-box {
+      text-align: center;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+    }
+
+    .timer-display {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .timer-unit {
+      background: #ffe0e6;
+      padding: 12px 18px;
+      border-radius: 14px;
+      min-width: 70px;
+    }
+
+    .timer-val {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .timer-lbl {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Official Certificate */
+    .certificate {
+      background: #fffdf9;
+      border: 3px dashed #ffb3c1;
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      position: relative;
+    }
+
+    .cert-seal {
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+
+    .cert-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .cert-body {
+      font-size: 1rem;
+      color: var(--text-main);
+      margin-bottom: 15px;
+    }
+
+    .cert-signature {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      color: var(--primary);
+      border-top: 1px solid #ffd1dc;
+      display: inline-block;
+      padding-top: 5px;
+      margin-top: 10px;
+    }
+
+    /* Playlist Section */
+    .playlist-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #ffffff;
+      padding: 12px 16px;
+      border-radius: 14px;
+      margin-bottom: 10px;
+      border: 1px solid #f0f0f0;
+      transition: background 0.2s ease;
+    }
+
+    .playlist-item:hover {
+      background: #fff0f3;
+    }
+
+    .song-num {
+      font-weight: 700;
+      color: var(--primary);
+      width: 20px;
+    }
+
+    .song-info {
+      flex: 1;
+    }
+
+    .song-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .song-vibe {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .play-btn {
+      background: var(--badge-bg);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: var(--accent);
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.1);
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Meme Section */
+    .meme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .meme-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 15px;
+      border: 1px solid #f0f0f0;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .meme-emoji {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .meme-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(61, 38, 42, 0.45);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: 24px;
+      max-width: 520px;
+      width: 100%;
+      padding: 35px 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      position: relative;
+      transform: scale(0.85);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: scale(1);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: #ffe3e8;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      color: var(--accent);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .close-btn:hover {
+      background: #ffd1dc;
+    }
+
+    .modal-body blockquote {
+      font-size: 1rem;
+      color: var(--text-main);
+      white-space: pre-line;
+      line-height: 1.75;
+    }
+
+    .modal-action {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .btn-action {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(255, 90, 121, 0.3);
+    }
+
+    .btn-action:hover {
+      background: var(--accent);
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="bgParticles"></div>
+
+  <div class="container">
+    <!-- Hero Header -->
+    <header>
+      <span class="header-badge">For My Favorite Patient 🩹</span>
+      <h1>Heard your leg is doing shakara</h1>
+      <p class="subtitle">So I built you a tiny digital care package to keep you company while you rest like a queen.</p>
+    </header>
+
+    <!-- Doctor's Orders -->
+    <div class="section-card">
+      <div class="section-title">
+        <span>🩺</span> Doctor's Orders (Strict Compliance)
+      </div>
+      <div class="orders-grid">
+        <div class="order-card">
+          <div class="order-num">Order #1</div>
+          <div class="order-text">No waka waka! Strictly bed rest, royalty treatment today.</div>
+        </div>
+        <div class="order-card">
+          <div class="order-num">Order #2</div>
+          <div class="order-text">Laugh at least 5 times today (I am fully available for that).</div>
+        </div>
+        <div class="order-card">
+          <div class="order-num">Order #3</div>
+          <div class="order-text">Allow me to disturb & care for you until you feel 100%.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Open When Letters -->
+    <div class="section-card">
+      <div class="section-title">
+        <span>💌</span> Open When You Need Me
+      </div>
+      <div class="letters-grid">
+        <div class="letter-btn" onclick="openLetter('hurt')">
+          <div class="letter-icon">🩹</div>
+          <div class="letter-title">Open when leg hurts</div>
+          <div class="letter-sub">Read this when the pain is disturbing you</div>
+        </div>
+        <div class="letter-btn" onclick="openLetter('bored')">
+          <div class="letter-icon">🛏️</div>
+          <div class="letter-title">Open when bored on bed</div>
+          <div class="letter-sub">Boredom cure right inside</div>
+        </div>
+        <div class="letter-btn" onclick="openLetter('laugh')">
+          <div class="letter-icon">😂</div>
+          <div class="letter-title">Open when you want to laugh</div>
+          <div class="letter-sub">Instant smile guarantee</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Certificate -->
+    <div class="section-card">
+      <div class="section-title">
+        <span>📜</span> Official Exemption Notice
+      </div>
+      <div class="certificate">
+        <div class="cert-seal">🏅</div>
+        <div class="cert-title">Officially Excused From Stress</div>
+        <div class="cert-body">
+          This certifies that <strong>My Favorite Person</strong> is hereby exempted from all house chores, stress, overthinking, and standing up today.
+        </div>
+        <div class="cert-signature">Signed, Dr. Emmanuel 🩺</div>
+      </div>
+    </div>
+
+    <!-- Countdown Meter -->
+    <div class="section-card">
+      <div class="section-title">
+        <span>💃</span> Leg Recovery & Dance Countdown
+      </div>
+      <div class="recovery-box">
+        <p style="font-weight:600; color:var(--text-main);">Days until you can dance & waka waka again:</p>
+        <div class="timer-display">
+          <div class="timer-unit">
+            <div class="timer-val" id="daysVal">03</div>
+            <div class="timer-lbl">Days</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-val" id="hoursVal">12</div>
+            <div class="timer-lbl">Hours</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-val" id="minsVal">45</div>
+            <div class="timer-lbl">Mins</div>
+          </div>
+        </div>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Until then, stay soft and let yourself be spoiled small.</p>
+      </div>
+    </div>
+
+    <!-- Meme Section -->
+    <div class="section-card">
+      <div class="section-title">
+        <span>🤪</span> Leg Pain Memes to Make You Smile
+      </div>
+      <div class="meme-grid">
+        <div class="meme-card">
+          <div class="meme-emoji">🦵🛑</div>
+          <div class="meme-text">"Your leg said: break time, not heartbreak!"</div>
+        </div>
+        <div class="meme-card">
+          <div class="meme-emoji">👑🛌</div>
+          <div class="meme-text">"Physically on bed, mentally ruling the world."</div>
+        </div>
+        <div class="meme-card">
+          <div class="meme-emoji">📞📱</div>
+          <div class="meme-text">"Side effect of resting leg: excessive texts from me."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Playlist Section -->
+    <div class="section-card">
+      <div class="section-title">
+        <span>🎧</span> Songs To Heal Your Leg To
+      </div>
+      <div class="playlist-item">
+        <div class="song-num">01</div>
+        <div class="song-info">
+          <div class="song-title">Stand By Me / Soft Comfort Vibe</div>
+          <div class="song-vibe">For when you just want to relax</div>
+        </div>
+        <button class="play-btn" onclick="playSong('Stand By Me')">▶</button>
+      </div>
+      <div class="playlist-item">
+        <div class="song-num">02</div>
+        <div class="song-info">
+          <div class="song-title">No Stress Necessary</div>
+          <div class="song-vibe">Reminder to stay resting</div>
+        </div>
+        <button class="play-btn" onclick="playSong('No Stress Necessary')">▶</button>
+      </div>
+      <div class="playlist-item">
+        <div class="song-num">03</div>
+        <div class="song-info">
+          <div class="song-title">Your Favorite Laugh Track</div>
+          <div class="song-vibe">Call me to play this live 😉</div>
+        </div>
+        <button class="play-btn" onclick="playSong('Call Emmanuel')">▶</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>Built with extra care for you 💖 • Get well fast!</p>
+    </footer>
+  </div>
+
+  <!-- Letter Modal Popup -->
+  <div class="modal-overlay" id="letterModal">
+    <div class="modal-card">
+      <button class="close-btn" onclick="closeLetter()">✕</button>
+      <div class="modal-body">
+        <blockquote id="modalText"></blockquote>
+      </div>
+      <div class="modal-action" id="modalAction"></div>
+    </div>
+  </div>
+
+  <script>
+    // Letters Content
+    const letters = {
+      hurt: {
+        text: `Ouch. Is it paining now?\n\nCome, give me the pain, let me help you hold it small.\n\nI know you are strong, but you don't have to be strong today. Just rest. The world can wait. Your leg needs you to be soft today.\n\nIf you want distraction, I'm one call away. If you want to vex about the pain, I'm still one call away. If you want to just keep quiet on call, I'm still here.\n\nQuick healing, my favorite person. Can't wait for you to waka well again so I can stress you.`,
+        actionText: '📞 Call / Text Emmanuel',
+        actionFn: () => {
+          alert("I'm ready to listen or keep you company whenever you call! ❤️");
+        }
+      },
+      bored: {
+        text: `Bored on bed?\n\nThat's why this website was created! Your official bed-rest entertainer is on standby.\n\nSend me a message with a random question, or tell me to send you 3 silly stories. I promise to keep you entertained till you fall asleep.`,
+        actionText: '💬 Send "I\'m bored on bed"',
+        actionFn: () => {
+          navigator.clipboard.writeText("I'm bored on bed!");
+          alert("Copied 'I'm bored on bed!' to your clipboard! Paste & send it to me 😉");
+        }
+      },
+      laugh: {
+        text: `Smile check! 😁\n\nDid you know? Laughing actually speeds up leg healing by 200% (Dr. Emmanuel's proven science 😉).\n\nIf you aren't smiling right now, just know someone is currently looking at their phone praying your leg feels better right this second.`,
+        actionText: '✨ I\'m smiling now',
+        actionFn: () => {
+          closeLetter();
+        }
+      }
+    };
+
+    function openLetter(key) {
+      const modal = document.getElementById('letterModal');
+      const textElem = document.getElementById('modalText');
+      const actionContainer = document.getElementById('modalAction');
+
+      const data = letters[key];
+      textElem.innerText = data.text;
+      
+      actionContainer.innerHTML = '';
+      if(data.actionText) {
+        const btn = document.createElement('button');
+        btn.className = 'btn-action';
+        btn.innerText = data.actionText;
+        btn.onclick = data.actionFn;
+        actionContainer.appendChild(btn);
+      }
+
+      modal.classList.add('active');
+    }
+
+    function closeLetter() {
+      document.getElementById('letterModal').classList.remove('active');
+    }
+
+    function playSong(title) {
+      alert(`Playing vibe: "${title}" ✨ (Call Emmanuel to listen together!)`);
+    }
+
+    // Care Particles Background
+    function createParticles() {
+      const container = document.getElementById('bgParticles');
+      const symbols = ['🩹', '🌸', '💖', '✨', '☕'];
+      
+      for (let i = 0; i < 12; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'bg-particle';
+        particle.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.animationDuration = (Math.random() * 5 + 7) + 's';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(particle);
+      }
+    }
+
+    window.onload = () => {
+      createParticles();
+    };
+  </script>
+</body>
+</html>
